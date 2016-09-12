@@ -22,7 +22,20 @@ public class ConvertDecimalToBinary {
 	 * @return
 	 */
 	private String toBinary(int a) {
-		//TODO Actual Logic here;
-		return "";
+		// Logic
+		// Divide the number by 2, check the quotient
+		// If quotient is 0 then stop
+		// otherwise divide the number by 2 again
+		String binary = "";
+		int quotient =  a / 2;
+		int remainder = a % 2;
+		binary = binary + remainder;
+		while (quotient != 0) {
+			remainder = quotient % 2;
+			quotient =  quotient / 2;
+			binary = remainder + binary;
+		}
+
+		return binary;
 	}
 }
